@@ -40,10 +40,9 @@ def generate_car_no(list):
     return car_no
 
 def get_non_occurence_count(items):
-    count = 0
-    for item in items:
-        if item['ar_no'].count("-") == 1:
-            count += 1
+    list = [x['ar_no'] for x in items if x['ar_no'].count("-") == 1]
+    count = int(list[-1].split("-")[1])
+    print(count)
     return count
         
 @api_view(["GET"])
