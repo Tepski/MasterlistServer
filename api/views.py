@@ -47,7 +47,7 @@ def get_non_occurence_count(items):
 
     count = int(list[-1].split("-")[1])
     print(count)
-    return count
+    return count + 1
         
 @api_view(["GET"])
 def get_values(request):
