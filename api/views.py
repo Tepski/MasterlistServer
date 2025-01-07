@@ -41,6 +41,10 @@ def generate_car_no(list):
 
 def get_non_occurence_count(items):
     list = [x['ar_no'] for x in items if x['ar_no'].count("-") == 1]
+
+    if len(list) == 0:
+        return 0
+
     count = int(list[-1].split("-")[1])
     print(count)
     return count
