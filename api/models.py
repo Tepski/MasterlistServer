@@ -3,7 +3,7 @@ class Category(models.Model):
 
     intChoices = {
         "One": 1,
-        "Two": 2
+        "Two": 2,
     }
 
     areaContent = ["20CY", "21MY", "CT1", "CT2", "CT3", "CT4", "OT", "PNT", "PZT", "WH", "IQC", "OQC"]
@@ -31,13 +31,13 @@ class Category(models.Model):
     abnormality = models.CharField(max_length= 120)
     nature_of_abnormality = models.CharField(max_length=400, blank=True, default=None)
     affected_item = models.CharField(max_length=500, blank=True)
-    level = models.CharField(max_length=3, choices=intChoices, default="One")
+    level = models.CharField(max_length=3, choices=intChoices, blank=True, null=True)
     created = models.CharField(max_length=10, null=True, blank=True)
     detection_process = models.CharField(max_length=500, null=True, blank=True)
     function = models.CharField(max_length=10, null=True, blank=True)
     incharge = models.CharField(max_length=255, null=True, blank=True)
-    self_resolve_for_car = models.CharField(max_length=12, choices=CAR)
-    status = models.CharField(max_length=14, choices=statusChoices)
+    self_resolve_for_car = models.CharField(max_length=12, choices=CAR, blank=True, null=True), 
+    status = models.CharField(max_length=14, choices=statusChoices, blank=True, null=True)
     countermeasure = models.CharField(max_length=255, null=True, blank=True)
     fanout = models.BooleanField(default=True)
     remarks = models.CharField(max_length=255, null=True, blank=True)
