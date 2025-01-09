@@ -4,4 +4,4 @@ from . models import IPCategory
 class IPCategorySrlzr(serializers.ModelSerializer):
     class Meta:
         model = IPCategory
-        fields = ["__all__"]
+        fields = "__all__"
