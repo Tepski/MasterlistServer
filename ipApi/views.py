@@ -9,6 +9,7 @@ filterList = ["ar_no", "ar_category", "area", "abnormality", "nature_of_abnormal
 def check_occurence(data, list):
     data1 = [data[i] for i in filterList]
     data2 = [[x[j] for j in filterList] for x in list]
+    print(data1, "\n", data2)
     if len(data2) == 1:
         return None
     for item in reversed(data2[:-1]):
@@ -64,7 +65,7 @@ def set_values(request):
 
         category = IPCategory.objects.all()
         cat = IPCategorySrlzr(category, many=True)
-
+        print(srlzr.data)
         srlzr.instance.link = f"{srlzr.instance.id}"
 
         if srlzr.instance.self_resolve_for_car == "FOR CAR":

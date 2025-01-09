@@ -38,7 +38,7 @@ class IPCategory(models.Model):
     detection_process = models.CharField(max_length=500, null=True, blank=True)
     function = models.CharField(max_length=10, null=True, blank=True)
     incharge = models.CharField(max_length=255, null=True, blank=True)
-    self_resolve_for_car = models.CharField(max_length=12, choices=CAR, blank=True, null=True), 
+    self_resolve_for_car = models.CharField(max_length=12, choices=CAR, blank=True, null=True)
     status = models.CharField(max_length=14, choices=statusChoices, blank=True, null=True)
     countermeasure = models.CharField(max_length=255, null=True, blank=True)
     fanout = models.BooleanField(default=True)
